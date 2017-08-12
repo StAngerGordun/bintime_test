@@ -95,6 +95,11 @@ a.desc:after {
     padding: 15px;
     border: none;
 }
+.geo {
+    border: 1px solid black;
+    background:#ecffff;
+    padding: 10px;
+}
 
 @media(max-width:767px) {
     .nav li > form > button.logout {
@@ -113,3 +118,4 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
