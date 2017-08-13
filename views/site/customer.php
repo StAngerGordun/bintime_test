@@ -6,40 +6,36 @@
  * Time: 16:41
  */
 
-
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-var_dump($model); die();
-
-$this->title = 'Create Customer';
 ?>
-<?php $form = ActiveForm::begin(array('options' => ['method' => 'post'])); ?>`
-<?php $form->field($model, 'login') ?>
+<?php $form = ActiveForm::begin(array('options' => ['method' => 'post'])); ?>
+<?= $form->field($model, 'login') ?>
 
-<?php $form->field($model, 'password') ?>
-<?php $form->field($model, 'name') ?>
-<?php $form->field($model, 'surname') ?>
+<?= $form->field($model, 'password') ?>
+<?= $form->field($model, 'name') ?>
+<?= $form->field($model, 'surname') ?>
 <div class="dropdown">
-    <?php $form->field($model, 'gender')->dropDownList(array(1 => "men", 2 => 'woman')) ?>
+    <?= $form->field($model, 'gender')->dropDownList(array(1 => "men", 2 => 'woman')) ?>
 </div>
 <div class="location">
     <h1>Add address</h1>
-    <?php $form->field($model, 'geocomplete')->textInput(['class' => 'geocomplete form-control geo', 'placeholder' => 'Type in an address']) ?>
+    <?= $form->field($model, 'geocomplete')->textInput(['class' => 'geocomplete form-control geo', 'placeholder' => 'Type in an address']) ?>
     <fieldset class="details">
-        <?php $form->field($model, 'country[]')->
+        <?= $form->field($model, 'country[]')->
                 textInput(['placeholder' => 'Country', 'data-geo' => 'country', 'aria-required' => "true", "aria-invalid" => "false"]) ?>
-        <?php $form->field($model, 'country_short[]')->
+        <?= $form->field($model, 'country_short[]')->
                 textInput(['placeholder' => 'Country code', 'data-geo' => 'country_short', 'aria-required' => "true", "aria-invalid" => "false"]) ?>
-        <?php $form->field($model, 'locality[]')->
+        <?= $form->field($model, 'locality[]')->
                 textInput(['placeholder' => 'Locality', 'data-geo' => 'locality', 'aria-required' => "true", "aria-invalid" => "false"]) ?>
-        <?php $form->field($model, 'street[]')->
+        <?= $form->field($model, 'street[]')->
                 textInput(['placeholder' => 'Street', 'data-geo' => 'route', 'aria-required' => "true", "aria-invalid" => "false"]) ?>
-        <?php $form->field($model, 'street_number[]')->
+        <?= $form->field($model, 'street_number[]')->
                 textInput(['placeholder' => 'Street number', 'data-geo' => 'street_number', 'aria-required' => "true", "aria-invalid" => "false"]) ?>
-        <?php $form->field($model, 'office_number[]')->
+        <?= $form->field($model, 'office_number[]')->
                 textInput(['placeholder' => 'Office number'])?>
-        <?php $form->field($model, 'postal_code[]')->
+        <?= $form->field($model, 'postal_code[]')->
                 textInput(['placeholder' => 'Postal code', 'data-geo' => 'postal_code', 'aria-required' => "true", "aria-invalid" => "false"]) ?>
     </fieldset>
 </div>
@@ -47,7 +43,7 @@ $this->title = 'Create Customer';
             class="caret"></span></button>
 
 <div class="form-group">
-    <?php Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
+    <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
 </div>
 
 
