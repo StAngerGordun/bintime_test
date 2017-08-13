@@ -82,7 +82,7 @@ class SiteController extends Controller
             $user->surname = $customerData['surname'];
             $user->login = $customerData['login'];
             $user->password = $customerData['password'];
-            $user->gender = $customerData['gender'];
+            $user->gender_id = $customerData['gender'];
             $user->save();
             
            
