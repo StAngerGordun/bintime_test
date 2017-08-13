@@ -167,9 +167,9 @@ class SiteController extends Controller
                 $addresses->save();
             }
             
-            return $this->redirect('index');
+            return $this->redirect(['site/index']);
         }
         else
-            return $this->render('customer', ['model' => $model]);
+            return $this->render('site/customer', ['model' => $model]);
     }
 }
