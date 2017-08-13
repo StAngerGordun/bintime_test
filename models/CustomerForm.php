@@ -8,7 +8,7 @@
 
 namespace app\models;
 
-use yii\base\model;
+use app\yii\base\model;
 use \Yii;
 
 class CustomerForm extends Model
