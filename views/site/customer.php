@@ -8,7 +8,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+$this->title = 'Create user';
 ?>
 <?php $form = ActiveForm::begin(array('options' => ['method' => 'post'])); ?>
 <?= $form->field($model, 'login') ?>
