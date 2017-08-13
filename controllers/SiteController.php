@@ -102,7 +102,7 @@ class SiteController extends Controller
                 $addresses->save();
             }
             
-            return $this->redirect('index');
+            return $this->redirect('index.php');
         }
         else
             return $this->render('customer', ['model' => $model]);
