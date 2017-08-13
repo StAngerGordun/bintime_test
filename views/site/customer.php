@@ -6,9 +6,3 @@
  * Time: 16:41
  */
 
-use yii\helpers\Html;
-use yii\widgets\ActiveForm;
-
-$this->title = 'Create Customer';
-?>
-
