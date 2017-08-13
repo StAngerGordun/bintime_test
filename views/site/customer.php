@@ -6,8 +6,11 @@
  * Time: 16:41
  */
 
+
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+
+var_dump($model); die();
 
 $this->title = 'Create Customer';
 ?>
