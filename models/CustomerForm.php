@@ -7,9 +7,9 @@
  */
 
 namespace app\models;
-
-use \yii\base\model;
-use \Yii;
+var_dump(__DIR__ );die();
+//use \yii\base\model;
+//use \Yii;
 
 class CustomerForm extends Model
 {
