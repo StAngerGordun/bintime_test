@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\Addresses;
 use Yii;
+use yii\db\Exception;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
@@ -72,68 +73,7 @@ class SiteController extends Controller
         return $this->render('index', ['users' => $users]);
     }
     
-    /**
-     * Login action.
-     *
-     * @return Response|string
-     */
-    public function actionLogin()
-    {
-        if (!Yii::$app->user->isGuest)
-        {
-            return $this->goHome();
-        }
-        
-        $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login())
-        {
-            return $this->goBack();
-        }
-        return $this->render('login', [
-            'model' => $model,
-        ]);
-    }
-    
-    /**
-     * Logout action.
-     *
-     * @return Response
-     */
-    public function actionLogout()
-    {
-        Yii::$app->user->logout();
-        
-        return $this->goHome();
-    }
-    
-    /**
-     * Displays contact page.
-     *
-     * @return Response|string
-     */
-    public function actionContact()
-    {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail']))
-        {
-            Yii::$app->session->setFlash('contactFormSubmitted');
-            
-            return $this->refresh();
-        }
-        return $this->render('contact', [
-            'model' => $model,
-        ]);
-    }
-    
-    /**
-     * Displays about page.
-     *
-     * @return string
-     */
-    public function actionAbout()
-    {
-        return $this->render('about');
-    }
+   
     
     public function actionCustomer()
     {
@@ -170,6 +110,14 @@ class SiteController extends Controller
         //    return $this->redirect(['site/index']);
         //}
         //else
-            return $this->render('site/customer', ['model' => $model]);
+        try
+        {
+            return $this->render('customer', ['model' => $model]);
+        }
+        catch (Exception $exception)
+        {
+            var_dump($exception->getMessage());
+            die();
+        }
     }
 }
