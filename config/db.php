@@ -1,9 +1,10 @@
 <?php
 
+$url=parse_url(getenv("CLEARDB_DATABASE_URL"));
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=heroku_4678a6e2f034e7a',
-    'username' => 'b05326bb6b8ddb',
-    'password' => 'bb72e07c',
+    'dsn' => "mysql:host={$url["host"]};dbname=".substr($url["path"],1),
+    'username' => $url["user"],
+    'password' => $url["pass"],
     'charset' => 'utf8',
 ];
