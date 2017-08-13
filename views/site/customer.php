@@ -13,7 +13,7 @@ use yii\widgets\ActiveForm;
 <?php $form = ActiveForm::begin(array('options' => ['method' => 'post'])); ?>
 <?= $form->field($model, 'login') ?>
 
-<?= $form->field($model, 'password') ?>
+<?= $form->field($model, 'password')->passwordInput() ?>
 <?= $form->field($model, 'name') ?>
 <?= $form->field($model, 'surname') ?>
 <div class="dropdown">
