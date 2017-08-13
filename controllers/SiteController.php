@@ -110,14 +110,7 @@ class SiteController extends Controller
         //    return $this->redirect(['site/index']);
         //}
         //else
-        try
-        {
             return $this->render('customer', ['model' => $model]);
-        }
-        catch (Exception $exception)
-        {
-            var_dump($exception->getMessage());
-            die();
-        }
+      
     }
 }
