@@ -9,6 +9,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
+$this->title = 'Create Customer';
 ?>
 <?php $form = ActiveForm::begin(array('options' => ['method' => 'post'])); ?>
 <?= $form->field($model, 'login') ?>

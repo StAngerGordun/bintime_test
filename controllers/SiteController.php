@@ -64,7 +64,12 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+    
+        $users = User::find()
+            ->innerJoinWith(['addresses'])
+            ->innerJoinWith(['gender'])
+            ->all();
+        return $this->render('index', ['users' => $users]);
     }
     
     /**
@@ -162,7 +167,7 @@ class SiteController extends Controller
                 $addresses->save();
             }
             
-            return $this->render('index', ['model' => $model]);
+            return $this->redirect('index');
         }
         else
             return $this->render('customer', ['model' => $model]);

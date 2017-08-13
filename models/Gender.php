@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: ANDREW
  * Date: 13.08.2017
- * Time: 14:25
+ * Time: 12:17
  */
 
 namespace app\models;
@@ -11,7 +11,7 @@ namespace app\models;
 
 use yii\db\ActiveRecord;
 
-class Addresses extends ActiveRecord
+class Gender extends ActiveRecord
 {
     
 }

@@ -118,4 +118,12 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+.table-inverse{
+    background-color: black;
+    color:white;
+}
+
+.more-button{
+    padding-left: 0;
+}
 
