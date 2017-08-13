@@ -5,6 +5,6 @@ return [
     'class' => 'yii\db\Connection',
     'dsn' => "mysql:host={$url["host"]};dbname=".substr($url["path"],1),
     'username' => $url["user"],
-    'password' => 'bb72e07c',
+    'password' => $url["pass"],
     'charset' => 'utf8',
 ];
