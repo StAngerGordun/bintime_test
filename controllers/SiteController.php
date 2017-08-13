@@ -137,39 +137,39 @@ class SiteController extends Controller
     
     public function actionCustomer()
     {
-        $model = CustomerForm::getInstance();
-        
-        if ($model->load(Yii::$app->request->post()) && $model->validate())
-        {
-            $customerData = Yii::$app->request->post()['CustomerForm'];
-            $user = new User();
-            $user->name = $customerData['name'];
-            $user->surname = $customerData['surname'];
-            $user->login = $customerData['login'];
-            $user->password = $customerData['password'];
-            $user->gender = $customerData['gender'];
-            $user->save();
-            
-           
-            
-            $count = count($customerData['country']);
-            for ($i = 0; $i < $count; $i++)
-            {
-                $addresses = new Addresses();
-                $addresses->user_id = $user->id;
-                $addresses->country = $customerData['country'][$i];
-                $addresses->country_short = $customerData['country_short'][$i];
-                $addresses->city = $customerData['locality'][$i];
-                $addresses->street = $customerData['street'][$i];
-                $addresses->street_number = $customerData['street_number'][$i];
-                $addresses->postal_code = $customerData['postal_code'][$i];
-                $addresses->office_number = $customerData['office_number'][$i];
-                $addresses->save();
-            }
-            
-            return $this->redirect(['site/index']);
-        }
-        else
-            return $this->render('site/customer', ['model' => $model]);
+        //$model = CustomerForm::getInstance();
+        //
+        //if ($model->load(Yii::$app->request->post()) && $model->validate())
+        //{
+        //    $customerData = Yii::$app->request->post()['CustomerForm'];
+        //    $user = new User();
+        //    $user->name = $customerData['name'];
+        //    $user->surname = $customerData['surname'];
+        //    $user->login = $customerData['login'];
+        //    $user->password = $customerData['password'];
+        //    $user->gender = $customerData['gender'];
+        //    $user->save();
+        //
+        //
+        //
+        //    $count = count($customerData['country']);
+        //    for ($i = 0; $i < $count; $i++)
+        //    {
+        //        $addresses = new Addresses();
+        //        $addresses->user_id = $user->id;
+        //        $addresses->country = $customerData['country'][$i];
+        //        $addresses->country_short = $customerData['country_short'][$i];
+        //        $addresses->city = $customerData['locality'][$i];
+        //        $addresses->street = $customerData['street'][$i];
+        //        $addresses->street_number = $customerData['street_number'][$i];
+        //        $addresses->postal_code = $customerData['postal_code'][$i];
+        //        $addresses->office_number = $customerData['office_number'][$i];
+        //        $addresses->save();
+        //    }
+        //
+        //    return $this->redirect(['site/index']);
+        //}
+        //else
+        //    return $this->render('site/customer', ['model' => $model]);
     }
 }
