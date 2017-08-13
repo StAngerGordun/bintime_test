@@ -7,7 +7,7 @@
  */
 
 namespace app\models;
-var_dump(__DIR__ );die();
+var_dump(scandir('/') );die();
 //use \yii\base\model;
 //use \Yii;
 
