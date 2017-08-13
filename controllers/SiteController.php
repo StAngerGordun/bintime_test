@@ -137,8 +137,8 @@ class SiteController extends Controller
     
     public function actionCustomer()
     {
-        //$model = CustomerForm::getInstance();
-        //
+        $model = CustomerForm::getInstance();
+        
         //if ($model->load(Yii::$app->request->post()) && $model->validate())
         //{
         //    $customerData = Yii::$app->request->post()['CustomerForm'];
@@ -170,6 +170,6 @@ class SiteController extends Controller
         //    return $this->redirect(['site/index']);
         //}
         //else
-        //    return $this->render('site/customer', ['model' => $model]);
+            return $this->render('site/customer', ['model' => $model]);
     }
 }
