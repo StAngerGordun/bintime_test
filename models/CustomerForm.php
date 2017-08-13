@@ -7,9 +7,7 @@
  */
 
 namespace app\models;
-var_dump(scandir('/app/vendor/yiisoft/yii2/base') );die();
-//use \yii\base\model;
-//use \Yii;
+use yii\base\Model;
 
 class CustomerForm extends Model
 {
